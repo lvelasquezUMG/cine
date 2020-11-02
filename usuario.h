@@ -11,7 +11,7 @@ Usuario *usuario = new Usuario[minimo];
 
 void LeerUsuarios(){
     /*Nombre del txt*/
-    string NombreArchivo = "usuarios.txt";
+    string NombreArchivo = "bd/usuarios.txt";
     string Linea;
     Usuarios = 0;
     /*Si no existe el archivo, muestro el mensaje*/
@@ -48,9 +48,9 @@ void LeerUsuarios(){
 }
 void ConfirmarUsuarios(){
     /*Primero elimino el archivo, porque no puedo hacer filtro para modificar solo el campo que quiero*/
-    remove("usuarios.txt");
+    remove("bd/usuarios.txt");
     /*Abro el archivo usuarios*/
-    ofstream Arhivo("usuarios.txt");
+    ofstream Arhivo("bd/usuarios.txt");
     for(int i = 0; i < Usuarios; i++){
         /*Cargo todo de nuevo, separando toda la informacion con pipes*/
         Arhivo << usuario[i].NombreUsuario << "|" ;
