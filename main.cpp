@@ -4,7 +4,7 @@
 #include <cstdlib>
 #include <bits/stdc++.h>
 #include <windows.h>
-
+ #include <time.h>
 using namespace std;
 //variables constantes, para poner un limite de registros
  int maximo = 5000;
@@ -28,7 +28,7 @@ int main(){
     return 0;
 }
 
- 
+   
 
 void iniciar(){
     LeerPeliculas();
@@ -64,7 +64,7 @@ void iniciar(){
                 break;
 
             case 2://mostrar todas las peliculas
-                //funcion();
+                ModificarPeliculas();
                 break;
 
             case 3: //editar pelicula
@@ -72,11 +72,11 @@ void iniciar(){
                 break;
 
             case 4:
-                //funcion();
+                PeliculasPorAnio();
                 break;
 
             case 5:
-                //
+                PeliculasEstreno();
                 break;
 
             case 6:
