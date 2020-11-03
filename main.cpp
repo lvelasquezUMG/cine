@@ -14,6 +14,10 @@ const int minimo = 100;
 string sucursal = "";
 string sesion   = "";
 /*Agrego el algoritmo de usuarios*/
+void Limpiar(){
+    system("pause");
+    system("cls");
+}
 #include "usuario.h" 
 void iniciar();
 /*Agrego el algorimo de peliculas*/
@@ -33,7 +37,7 @@ void iniciar(){
 
 
     do
-    {
+    { 
 
         // Menu principal
         cout << "Usuario Conectado: " << sesion << endl <<" Sucursal: "<< sucursal << endl;
@@ -53,10 +57,10 @@ void iniciar(){
         cin.sync();
         system("cls");
 
-        // Hacemos una cosa u otra seg�n la opci�n escogida
+        // Switch de Opciones
         switch(opcion){
-            case 1: //a�adir una pelicula
-                //funcion();
+            case 1:  
+                AgregarPeliculas();
                 break;
 
             case 2://mostrar todas las peliculas
@@ -64,7 +68,7 @@ void iniciar(){
                 break;
 
             case 3: //editar pelicula
-                //funcion();
+                VerPeliculas();
                 break;
 
             case 4:
@@ -87,16 +91,15 @@ void iniciar(){
                 AgregarUsuarios();
                 break;
             case 9:
-                 ModificarUsuarios();;
+                ModificarUsuarios();;
                 break;
             case 10:
                 cout << "Fin del programa" << endl;
                 break;
             default:
                 cout << "Opcion no existe" << endl;
-                system("pause");
-                system("cls");
+                Limpiar();
                 break;
         }
-    } while (opcion != 11);  // Si la opcion es 5, terminamos
+    } while (opcion != 10);  // Si la opcion es 5, terminamos
 }

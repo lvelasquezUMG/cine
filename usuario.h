@@ -62,13 +62,14 @@ void ConfirmarUsuarios(){
 }
 void AgregarUsuarios(){
     /*Formulario para pedir informacion de los usuarios*/
-    cout << "Introduce el nombre de usuario: ";
+    cout << "***********Formulario para Agregar Usuarios************ "; 
+    cout << "Introduce el nombre de usuario: "<< "\n";
     getline(cin, usuario[Usuarios].NombreUsuario);
     cin.sync();
-    cout << "Introduce la Clave: ";
+    cout << "Introduce la Clave: "<< "\n";
     getline(cin, usuario[Usuarios].Clave);
     cin.sync();
-    cout << "Introduce la Sucursal: ";
+    cout << "Introduce la Sucursal: "<< "\n";
     getline(cin, usuario[Usuarios].Sucursal);
     cin.sync(); 
     Usuarios++;
@@ -77,16 +78,14 @@ void AgregarUsuarios(){
     /*Y vuelvo a leer el iterador*/
     LeerUsuarios();
     cout << "Usuario Creado" << endl;
-    system("pause");
-    system("cls");
+    Limpiar();
 }
 void VerUsuarios(){
     /*Mostrar los usuarios que estane en el iterador*/
     for (int i=0; i<Usuarios; i++){
         cout << "Usuario: " << usuario[i].NombreUsuario << "\n";
     }
-    system("pause");
-    system("cls");
+    Limpiar();
 }
 void ModificarUsuarios(){
     string Nombre = "";
@@ -125,8 +124,7 @@ void ModificarUsuarios(){
     }
     ConfirmarUsuarios();
     LeerUsuarios();
-    system("pause");
-    system("cls");
+    Limpiar();
 }
 void InicioSesion(){
     /*Variable para saber si la clave es correcta*/
@@ -152,8 +150,7 @@ void InicioSesion(){
         if(Correcto){
             /*Si las credenciales son incorrectas*/
             cout << "Clave o Usuario Incorrectos" << endl;
-            system("pause");
-            system("cls");
+            Limpiar();
         }
     }while(Correcto);
     /*Limpio la pantalla*/
