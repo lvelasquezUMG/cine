@@ -7,22 +7,21 @@
 
 using namespace std;
 //variables constantes, para poner un limite de registros
-const int maximo = 5000;
+ int maximo = 5000;
 const int minimo = 100;
 
 //variables globales, para saber quien se conecto y enque sucursal
 string sucursal = "";
 string sesion   = "";
 /*Agrego el algoritmo de usuarios*/
+void Limpiar(){
+    system("pause");
+    system("cls");
+}
 #include "usuario.h" 
-//variables para saber los iteradores de cuando se agrega un nuevo struc a su respectivo arreglo
-//void LeerUsuarios();
-/*void ConfirmarUsuarios();
-void InicioSesion();
-void AgregarUsuarios();
-void VerUsuarios();
-void ModificarUsuarios();*/
 void iniciar();
+/*Agrego el algorimo de peliculas*/
+#include "peliculas.h" 
 int opcion;
 int main(){
     iniciar();
@@ -32,38 +31,36 @@ int main(){
  
 
 void iniciar(){
-
+    LeerPeliculas();
     LeerUsuarios();
     InicioSesion();
 
 
     do
-    {
+    { 
 
         // Menu principal
-        cout << "Usuario Conectado: " << sesion << endl <<"Sucursal: "<< sucursal << endl;
+        cout << "Usuario Conectado: " << sesion << endl <<" Sucursal: "<< sucursal << endl;
         cout << "Menu Principal:" << endl;
         cout << "1.-  Agregar Pelicula" << endl;
         cout << "2.-  Editar Pelicula" << endl;
-
         cout << "3.-  Mostrar todas las peliculas" << endl;
         cout << "4.-  Mostrar peliculas segun anio de produccion" << endl;
         cout << "5.-  Mostrar peliculas de estreno" << endl;
         cout << "6.-  Crear boleto" << endl;
         cout << "7.- Ver boletos" << endl;
         cout << "8.-  Agregar usuario" << endl;
-        cout << "9.-  Mostrar usuarios" << endl;
-        cout << "10.- Cambiar contrasenia usuario" << endl;
-        cout << "11.- Salir" << endl;
+        cout << "9.- Cambiar contrasenia usuario" << endl;
+        cout << "10.- Salir" << endl;
 
         cin >> opcion;
         cin.sync();
         system("cls");
 
-        // Hacemos una cosa u otra seg�n la opci�n escogida
+        // Switch de Opciones
         switch(opcion){
-            case 1: //a�adir una pelicula
-                //funcion();
+            case 1:  
+                AgregarPeliculas();
                 break;
 
             case 2://mostrar todas las peliculas
@@ -71,7 +68,7 @@ void iniciar(){
                 break;
 
             case 3: //editar pelicula
-                //funcion();
+                VerPeliculas();
                 break;
 
             case 4:
@@ -94,20 +91,15 @@ void iniciar(){
                 AgregarUsuarios();
                 break;
             case 9:
-                VerUsuarios();
-                break;
-            case 10:
                 ModificarUsuarios();;
                 break;
-            case 11:
+            case 10:
                 cout << "Fin del programa" << endl;
                 break;
-
             default:
-                cout << "Opcion desconocida!" << endl;
-                system("pause");
-                system("cls");
+                cout << "Opcion no existe" << endl;
+                Limpiar();
                 break;
         }
-    } while (opcion != 11);  // Si la opcion es 5, terminamos
+    } while (opcion != 10);  // Si la opcion es 5, terminamos
 }
