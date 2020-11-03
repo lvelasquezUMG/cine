@@ -7,7 +7,7 @@
 
 using namespace std;
 //variables constantes, para poner un limite de registros
-const int maximo = 5000;
+ int maximo = 5000;
 const int minimo = 100;
 
 //variables globales, para saber quien se conecto y enque sucursal
@@ -15,14 +15,9 @@ string sucursal = "";
 string sesion   = "";
 /*Agrego el algoritmo de usuarios*/
 #include "usuario.h" 
-//variables para saber los iteradores de cuando se agrega un nuevo struc a su respectivo arreglo
-//void LeerUsuarios();
-/*void ConfirmarUsuarios();
-void InicioSesion();
-void AgregarUsuarios();
-void VerUsuarios();
-void ModificarUsuarios();*/
 void iniciar();
+/*Agrego el algorimo de peliculas*/
+#include "peliculas.h" 
 int opcion;
 int main(){
     iniciar();
@@ -32,7 +27,7 @@ int main(){
  
 
 void iniciar(){
-
+    LeerPeliculas();
     LeerUsuarios();
     InicioSesion();
 
@@ -41,7 +36,7 @@ void iniciar(){
     {
 
         // Menu principal
-        cout << "Usuario Conectado: " << sesion << endl <<"Sucursal: "<< sucursal << endl;
+        cout << "Usuario Conectado: " << sesion << endl <<" Sucursal: "<< sucursal << endl;
         cout << "Menu Principal:" << endl;
         cout << "1.-  Agregar Pelicula" << endl;
         cout << "2.-  Editar Pelicula" << endl;

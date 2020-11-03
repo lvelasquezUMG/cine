@@ -17,23 +17,23 @@ void LeerUsuarios(){
     /*Si no existe el archivo, muestro el mensaje*/
     ifstream Archivo(NombreArchivo.c_str());
     if( Archivo.fail() ){
-        cout << "No existe el fichero " << NombreArchivo << "!" << endl;
+        cout << "No existe el fichero " << NombreArchivo << endl;
         /*Salir del sistema*/
         exit(1);
     }
     /*Mientras no este en el final del archivo*/
     while (!Archivo.eof()) {
         getline(Archivo,Linea);
-
+         /*Mientras no este en el final del archivo*/
         if (!Archivo.eof()){
             vector <string> Contenido;
-            stringstream check1(Linea);
+            stringstream revisar(Linea);
             string Intermedio;
-            while(getline(check1, Intermedio, '|')){
+            while(getline(revisar, Intermedio, '|')){
                 /*Guardo el contenido del archivo en el vector*/
                 Contenido.push_back(Intermedio);
             }
-            /*Recorro los registros del archivo, cada tres espacios separados por coma es una tupla*/
+            /*Recorro los registros del archivo, cada tres espacios separados por pipe es una tupla*/
             for(int i = 0; i < Contenido.size(); i=i+3){
                 usuario[Usuarios].NombreUsuario = Contenido[i];
                 usuario[Usuarios].Clave         = Contenido[i+1];
