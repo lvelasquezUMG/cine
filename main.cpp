@@ -40,16 +40,14 @@ void iniciar(){
         cout << "Menu Principal:" << endl;
         cout << "1.-  Agregar Pelicula" << endl;
         cout << "2.-  Editar Pelicula" << endl;
-
         cout << "3.-  Mostrar todas las peliculas" << endl;
         cout << "4.-  Mostrar peliculas segun anio de produccion" << endl;
         cout << "5.-  Mostrar peliculas de estreno" << endl;
         cout << "6.-  Crear boleto" << endl;
         cout << "7.- Ver boletos" << endl;
         cout << "8.-  Agregar usuario" << endl;
-        cout << "9.-  Mostrar usuarios" << endl;
-        cout << "10.- Cambiar contrasenia usuario" << endl;
-        cout << "11.- Salir" << endl;
+        cout << "9.- Cambiar contrasenia usuario" << endl;
+        cout << "10.- Salir" << endl;
 
         cin >> opcion;
         cin.sync();
@@ -89,17 +87,13 @@ void iniciar(){
                 AgregarUsuarios();
                 break;
             case 9:
-                VerUsuarios();
+                 ModificarUsuarios();;
                 break;
             case 10:
-                ModificarUsuarios();;
-                break;
-            case 11:
                 cout << "Fin del programa" << endl;
                 break;
-
             default:
-                cout << "Opcion desconocida!" << endl;
+                cout << "Opcion no existe" << endl;
                 system("pause");
                 system("cls");
                 break;
