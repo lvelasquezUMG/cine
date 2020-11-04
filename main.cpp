@@ -10,64 +10,64 @@ using namespace std;
  int maximo = 5000;
 const int minimo = 100;
 
-//variables globales, para saber quien se conecto y enque sucursal
+//variables glob ales, para saber quien se conecto y enque sucursal
 string sucursal = "";
 string sesion   = "";
-/*Agrego el algoritmo de usuarios*/
+/**/
 void Limpiar(){
     system("pause");
     system("cls");
 }
+/*Agrego el algoritmo de usuarios*/
 #include "usuario.h" 
-void iniciar();
+void Iniciar();
 /*Agrego el algorimo de peliculas*/
 #include "peliculas.h" 
+/*Agrego el algorimo de Ticktes*/
+#include "boletos.h"
+/*Variable para almacenar el numero de opcion*/ 
 int opcion;
 int main(){
-    iniciar();
+    Iniciar();
     return 0;
 }
-
-   
-
-void iniciar(){
+/*Arranco con las funciones de inicio*/
+void Iniciar(){
     LeerPeliculas();
     LeerUsuarios();
+    LeerBoletos();
     InicioSesion();
-
-
+    /*Do While para el menu, siempre pide usuario y contraseña, si y solo si datos sean erroneos*/
     do
     { 
-
-        // Menu principal
         cout << "Usuario Conectado: " << sesion << endl <<" Sucursal: "<< sucursal << endl;
         cout << "Menu Principal:" << endl;
-        cout << "1.-  Agregar Pelicula" << endl;
-        cout << "2.-  Editar Pelicula" << endl;
-        cout << "3.-  Mostrar todas las peliculas" << endl;
-        cout << "4.-  Mostrar peliculas segun anio de produccion" << endl;
-        cout << "5.-  Mostrar peliculas de estreno" << endl;
-        cout << "6.-  Crear boleto" << endl;
-        cout << "7.- Ver boletos" << endl;
-        cout << "8.-  Agregar usuario" << endl;
-        cout << "9.- Cambiar contrasenia usuario" << endl;
-        cout << "10.- Salir" << endl;
+        cout << "1)  Agregar Pelicula" << endl;
+        cout << "2)  Editar Pelicula" << endl;
+        cout << "3)  Mostrar todas las peliculas" << endl;
+        cout << "4)  Mostrar peliculas segun anio de produccion" << endl;
+        cout << "5)  Mostrar peliculas de estreno" << endl;
+        cout << "6)  Crear boleto" << endl;
+        cout << "7) Ver boletos" << endl;
+        cout << "8)  Agregar usuario" << endl;
+        cout << "9) Cambiar contrasenia usuario" << endl;
+        cout << "10) Salir Del sistema" << endl;
 
         cin >> opcion;
         cin.sync();
         system("cls");
 
-        // Switch de Opciones
+        //Opciones
         switch(opcion){
             case 1:  
                 AgregarPeliculas();
                 break;
 
-            case 2://mostrar todas las peliculas
+            case 2: 
                 ModificarPeliculas();
                 break;
 
-            case 3: //editar pelicula
+            case 3: 
                 VerPeliculas();
                 break;
 
@@ -80,11 +80,11 @@ void iniciar(){
                 break;
 
             case 6:
-                //funcion();
+                AgregarBoleto();
                 break;
 
             case 7:
-                //funcion();
+                VerBoletos();
                 break;
 
             case 8:
@@ -101,5 +101,5 @@ void iniciar(){
                 Limpiar();
                 break;
         }
-    } while (opcion != 10);  // Si la opcion es 5, terminamos
+    } while (opcion != 10);  
 }
